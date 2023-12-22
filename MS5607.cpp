@@ -3,7 +3,6 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include "BITSv5.h"
 #include "hardware/gpio.h"
 #include "hardware/i2c.h"
 #include "pico/stdlib.h"
@@ -11,8 +10,8 @@
 void MS5607::init() {
     i2c_init(i2c0, 100 * 1000);
 
-    gpio_set_function(SDA_PIN, GPIO_FUNC_I2C);
-    gpio_set_function(SCL_PIN, GPIO_FUNC_I2C);
+    gpio_set_function(sda_pin, GPIO_FUNC_I2C);
+    gpio_set_function(scl_pin, GPIO_FUNC_I2C);
 
     read_prom();
 }
